@@ -79,6 +79,8 @@ node() {
         git credentialsId: 'petr_kuznetsov', url: 'git@github.com:stonemct/Jenkins-testnestedShells.git'
     }
 
+env.eTT = TT
+env.eLL = LL
 
     stage('run shell'){
         sh """
@@ -86,9 +88,18 @@ node() {
             
             
             echo 'LL: ' + ${LL}
-            echo 'TT: ' + ${TT}
-            export ${LL}
-            export ${TT}
+            echo 'TT: ' + ${TT}  
+          
+            echo 'eLL: ' + ${eLL}
+            echo 'eTT: ' + ${eTT}
+            
+            export LL
+            export TT
+
+            export eLL
+            export eTT
+
+            
             bash test.sh
 
         """
