@@ -49,7 +49,7 @@ node() {
     }
     else {
         echo "Environment total: ${env.Environment}"
-        String[] Env_Array = ${params.Environment}.split(',')
+        String[] Env_Array = params.Environment.split(',')
         for (x in Env_Array) {
             echo "ENV: ${x}"
         }
