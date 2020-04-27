@@ -1,6 +1,9 @@
 #!`which env` groovy
 
+// DEFAULTS
+
 List LL = []
+def TT = ''
 
 properties([
     parameters([
@@ -52,7 +55,11 @@ node() {
         }
         LL = params.Environment.split(',')
     }
+
+    TT = LL.last()
+
     println 'LL: ' + LL
+    println 'TT: ' + TT
 
     println 'LL.each { loopoflist(it) }'
     LL.each { loopoflist(it) }
@@ -60,11 +67,30 @@ node() {
     println 'LL.reverse().each { loopoflist(it) }'
     LL.reverse().each { loopoflist(it) }
 
+/*
     println 'LL.each.reverse()'
     LL.each.reverse() { loopoflist(it) }
 
     println 'LL.reverseEach { loopoflist(it) }'
     LL.reverseEach { loopoflist(it) }
+*/
+
+    stage ('checkout'){
+        git credentialsId: 'petr_kuznetsov', url: 'git@github.com:stonemct/Jenkins-testnestedShells.git'
+    }
+
+
+    stage('run shell'){
+        sh """
+            ls -la
+            
+            
+            echo 'LL: ' + ${LL}
+            echo 'TT: ' + ${TT}
+            bash test.sh
+
+        """
+    }
 
 }
 
