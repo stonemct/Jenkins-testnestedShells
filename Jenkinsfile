@@ -93,11 +93,11 @@ env.eLL = LL
             echo 'eLL: ' + ${eLL}
             echo 'eTT: ' + ${eTT}
             
-            export LL
-            export TT
+ #           export LL
+ #           export TT
 
-            export eLL
-            export eTT
+#            export eLL
+#            export eTT
 
             
             bash test.sh
