@@ -87,6 +87,8 @@ node() {
             
             echo 'LL: ' + ${LL}
             echo 'TT: ' + ${TT}
+            export ${LL}
+            export ${TT}
             bash test.sh
 
         """
