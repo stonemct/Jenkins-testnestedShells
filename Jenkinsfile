@@ -35,6 +35,7 @@ if (params.UParameters) {
     return
 }
 
+
 node() {
 
     if ( env.Environment.isEmpty() ) {
@@ -55,6 +56,9 @@ node() {
 
     println 'LL.each { loopoflist(it) }'
     LL.each { loopoflist(it) }
+
+    println 'LL.reverse().each { loopoflist(it) }'
+    LL.reverse().each { loopoflist(it) }
 
     println 'LL.each.reverse()'
     LL.each.reverse() { loopoflist(it) }
