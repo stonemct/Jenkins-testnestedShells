@@ -56,6 +56,9 @@ node() {
     println 'LL.each { loopoflist(it) }'
     LL.each { loopoflist(it) }
 
+    println 'LL.each.reverse()'
+    LL.each.reverse() { loopoflist(it) }
+
     println 'LL.reverseEach { loopoflist(it) }'
     LL.reverseEach { loopoflist(it) }
 
