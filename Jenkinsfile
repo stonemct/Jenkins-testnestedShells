@@ -24,6 +24,11 @@ properties([
              ]
          ]
         ],
+        string(
+            defaultValue: '',
+            description: 'test empty value for IF in bash subscript',
+            name: 'bashif'
+        ),
         booleanParam(
             defaultValue: false,
             description: 'If this box checked, the parameters will be updated from Jenkinsfile\'s from VCS  ',
