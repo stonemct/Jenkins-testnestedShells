@@ -11,9 +11,11 @@ echo 'eTT: ' + ${eTT}
 if [[ ${bashif} != '' ]]; then
     export BASH_IF=${bashif}
     echo 'bashif: ' + ${bashif}
+    env
 fi
 
 if [[ -z ${bashif} ]]; then
     export BASH_IF=${bashif}+'-z'
     echo 'bashif: ' + ${bashif} + ' -z'
+    env
 fi
